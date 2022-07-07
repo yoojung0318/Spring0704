@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  기본세팅 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.yoojung0318.ex.myBatis.dao.ReviewDAO">
+  
+  	<select id=" selectReview" resultType="com.yoojung0318.ex.myBatis.model.Review">
+  	
+  		SELECT 
+  			`id`
+  			, `storeID`
+  			, `menu`
+  			, `userName`
+  			, `point`
+  			, `review`
+  			, `createdAt`
+  			, `updatedAt`
+  			
+  		FROM
+  			`new_review`	
+  	
+  	</select>
+  
+  </mapper>

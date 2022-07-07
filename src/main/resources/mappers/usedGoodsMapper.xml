@@ -1,6 +1,9 @@
-<!-- 프로젝트 설정 , 사용할 data 정리, 2.쿼리수행-->
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  mybatis xml dtd // mapper 쓸거니까  mapper 들어있는 걸로-->
+<!-- 프로젝트 설정 , 사용할 data 정리, 2.쿼리수행-->
+
+<!--  mybatis xml dtd // mapper 쓸거니까  mapper 들어있는 걸로
+기본세팅-->
+
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
