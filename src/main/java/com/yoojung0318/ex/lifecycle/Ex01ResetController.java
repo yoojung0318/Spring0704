@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yoojung0318.ex.lifecycle.model.Person;
-
 //@Controller와 @responseBody가 매번 공통적으로 쓰이니까 이걸 따로 기능화한다.
 @RestController  // controller + responseBody
 @RequestMapping("/lifecycle/ex01")
