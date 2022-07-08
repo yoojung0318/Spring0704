@@ -7,21 +7,22 @@
   
   <mapper namespace="com.yoojung0318.ex.myBatis.dao.ReviewDAO">
   
-  	<select id=" selectReview" resultType="com.yoojung0318.ex.myBatis.model.Review">
+  	<select id= "selectReview" resultType="com.yoojung0318.ex.myBatis.model.Review" parameterType="int">
   	
   		SELECT 
-  			`id`
-  			, `storeID`
-  			, `menu`
-  			, `userName`
-  			, `point`
-  			, `review`
-  			, `createdAt`
-  			, `updatedAt`
-  			
-  		FROM
-  			`new_review`	
-  	
-  	</select>
+			`id`
+			, `storeId`
+			, `menu`
+			, `userName`
+			, `point`
+			, `review`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`new_review`
+		WHERE
+			`id` = #{id}
+	
+	</select>
   
   </mapper>
