@@ -20,4 +20,15 @@ public class ReviewBO {
 		return review;
 		
 	}
+	
+	//storeId, menu, userName, point, review
+	//실행된 행의 개수를 리턴
+public int addReview(int storeId, String menu, String userName, double point, String review) {
+		
+		return reviewDAO.insertReview(storeId, menu, userName, point, review);
+	}
+	
+	public int addReviewByObject(Review review) {
+		return reviewDAO.insertReviewByObject(review);
+	}
 }
