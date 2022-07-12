@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  기본세팅 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.yoojung0318.ex.jsp.dao.UserDAO">
+  
+  	<insert id="insertUser" parameterType="map">
+  		INSERT INTO 
+  			`new_user`
+  		(
+  			`name`
+  			, `yyyymmdd`
+  			, `introduce`
+  			, `email`
+  			, `createdAt`
+  			, `updatedAt`
+  		
+  		)	
+  		VALUES
+  		(
+  		<!-- dao에 있는 이름 가져옴 -->
+  			#{name}
+  			, #{yyyymmdd}
+  			, #{introduce}
+  			, #{email}
+  			, now()
+  			, now()
+  		
+  		)
+  	
+  	</insert>
+  
+  
+  	<select id="selectLastUser" resultType="com.yoojung0318.ex.jsp.model.User">
+  		SELECT 
+  			`id`
+  			,`name`
+  			, `yyyymmdd`
+  			, `introduce`
+  			, `email`
+  			, `createdAt`
+  			, `updatedAt`
+  		FROM
+  			`new_user`
+  		<!-- 저장한거중, 가장 최근거 하나만 가져오려면 -->		
+		ORDER BY `id` DESC
+		LIMIT 1  	
+  	</select>
+  </mapper>
