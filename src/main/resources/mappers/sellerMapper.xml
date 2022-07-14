@@ -26,8 +26,34 @@
   		, now()
   		, now()
   		)
-  		
-  	
   	</insert>
-  
+  	<select id="selectLastSeller" resultType="com.yoojung0318.ex.jsp.model.Seller">
+  		SELECT 
+			`id`
+			, `nickname`
+			, `profileImage`
+			, `temperature`
+			, `createdAt`
+			, `updatedAt`
+		FROM 
+			`seller`
+		ORDER BY `id` DESC
+		LIMIT 1
+  	</select>
+  	
+  	<select id="selectSeller" parameterType="int"
+	resultType="com.yoojung0318.ex.jsp.model.Seller">
+		SELECT 
+			`id`
+			, `nickname`
+			, `profileImage`
+			, `temperature`
+			, `createdAt`
+			, `updatedAt`
+		FROM 
+			`seller`
+		WHERE 
+			`id` = #{id}
+	
+	</select>
   </mapper>
