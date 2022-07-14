@@ -10,8 +10,13 @@
 
 	<table border="1">
 		<tr>
+			<td>아이디</td>
+			<td>${result.id }</td>   <!-- <% %> 과 유사 !-->
+		</tr>
+		
+		<tr>
 			<td>이름</td>
-			<td>${result.name} </td>   <!-- <% %> 과 유사 !-->
+			<td>${result.name}</td>
 		</tr>
 		
 		<tr>

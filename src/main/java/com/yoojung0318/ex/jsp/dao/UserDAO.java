@@ -17,4 +17,6 @@ public interface UserDAO {
 	//가장 최근 등록되니 사용자 정보 조회
 	public User selectLastUser();
 	
+	public int insertUserWithId(User user);
+	
 }

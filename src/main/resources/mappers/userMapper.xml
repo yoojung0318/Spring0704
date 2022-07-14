@@ -8,32 +8,53 @@
   <mapper namespace="com.yoojung0318.ex.jsp.dao.UserDAO">
   
   	<insert id="insertUser" parameterType="map">
-  		INSERT INTO 
-  			`new_user`
-  		(
-  			`name`
-  			, `yyyymmdd`
-  			, `introduce`
-  			, `email`
-  			, `createdAt`
-  			, `updatedAt`
-  		
-  		)	
-  		VALUES
+		INSERT INTO 
+			`new_user`
+		(
+			`name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES 
   		(
   		<!-- dao에 있는 이름 가져옴 -->
   			#{name}
-  			, #{yyyymmdd}
-  			, #{introduce}
-  			, #{email}
-  			, now()
-  			, now()
+			, #{yyyymmdd}
+			, #{introduce}
+			, #{email}
+			, now()
+			, now()
   		
   		)
   	
   	</insert>
+  	<!-- 속성으로 MYBATIS가 알아서 ID정보 가져와 해당하는 멤버변수에 값 알아서 업데이트 하기 -->
+  	<insert id="insertUserWithId" parameterType="com.yoojung0318.ex.jsp.model.User"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO 
+			`new_user`
+		(
+			`name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES 
+		(
+			#{name}
+			, #{yyyymmdd}
+			, #{introduce}
+			, #{email}
+			, now()
+			, now()
+		)
   
-  
+  	</insert>
   	<select id="selectLastUser" resultType="com.yoojung0318.ex.jsp.model.User">
   		SELECT 
   			`id`

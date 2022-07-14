@@ -19,4 +19,14 @@ public class UserBO {
 	public User getLastUser() {
 		return userDAO.selectLastUser();
 	}
+	
+	public int addUserWithID(User user) {
+//		User user = new User();
+//		user.setName(name);
+//		user.setYyyymmdd(yyyymmdd);
+//		user.setIntroduce(introduce);
+//		user.setEmail(email);
+		return userDAO.insertUserWithId(user);
+		
+	}
 }
